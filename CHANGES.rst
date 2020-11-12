@@ -82,6 +82,7 @@ New Features in 0.3.0
   which tool should be used to write the image (either ``dd`` or ``bmaptool``)
 - Exporter configuration file ``exporter.yaml`` now allows use of environment
   variables.
+- Support for Eaton ePDU added, and can be used as a NetworkPowerPort.
 
 Breaking changes in 0.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
