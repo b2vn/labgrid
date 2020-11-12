@@ -36,6 +36,7 @@ New Features in 0.3.0
   ``--skip``, ``--seek``.
 - UBootDriver now allows overriding of default boot command (``run bootcmd``)
   via new ``boot_command`` argument.
+- Support for Eaton ePDU added, and can be used as a NetworkPowerPort.
 
 Breaking changes in 0.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
