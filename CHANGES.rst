@@ -37,6 +37,7 @@ New Features in 0.3.0
 - UBootDriver now allows overriding of default boot command (``run bootcmd``)
   via new ``boot_command`` argument.
 - The config file supports per-target options, in addition to global options.
+- Support for Eaton ePDU added, and can be used as a NetworkPowerPort.
 
 Breaking changes in 0.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
