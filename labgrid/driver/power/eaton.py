@@ -30,8 +30,9 @@ class _Snmp:
     def set(self, oid, value):
         identify = hlapi.ObjectType(hlapi.ObjectIdentity(oid),
                    hlapi.Integer(value))
-        hlapi.setCmd(self.engine, self.community, self.transport,
+        g = hlapi.setCmd(self.engine, self.community, self.transport,
             self.context, identify, lookupMib=False)
+        next(g)
 
 
 def power_set(host, port, index, value):
