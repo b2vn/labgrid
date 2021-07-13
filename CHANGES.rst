@@ -4,6 +4,7 @@ Release 0.4.0 (unreleased)
 New Features in 0.4.0
 ~~~~~~~~~~~~~~~~~~~~~
 
+- ModbusRTU driver for instruments
 - The `NetworkPowerDriver` now additionally supports:
   - Siglent SPD3000X series power supplies
 - UBootDriver now allows overriding of currently fixed await boot timeout

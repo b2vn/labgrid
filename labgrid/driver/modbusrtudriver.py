@@ -29,5 +29,42 @@ class ModbusRTUDriver(Driver):
     def on_deactivate(self):
         self.instrument = None
 
-    def read_register(self, addr, decimals, **kwargs):
-        return self.instrument.read_register(addr, decimals, **kwargs)
+    # TODO: Is it ok to use kwargs in a driver? Would it be better to add
+    # default values for e.g. 'signed'?
+    # TODO: Should we implement read_input_register() and read_holding
+    # register() or just have and option to provide the functioncode (either 3
+    # or 4) to the read_register() function?
+    def read_register(self, registeraddress, number_of_decimals=0,
+                      functioncode=3, signed=False):
+        return self.instrument.read_register(
+            registeraddress, number_of_decimals, functioncode, signed)
+
+    # TODO: Add the rest of the functionality
+    def write_register(self, registeraddress, value, number_of_decimals=0,
+                       functioncode=16, signed=False):
+        return self.instrument.write_register(
+            registeraddress, value, number_of_decimals, functioncode, signed)
+
+    def read_registers(self, registeraddress, number_of_registers,
+                       functioncode=3):
+        return self.instrument.read_registers(
+            registeraddress, number_of_registers, functioncode)
+
+    def write_registers(self, registeraddress, values):
+        return self.instrument.write_registers(registeraddress, values)
+
+    def read_bit(self, registeraddress, functioncode=2):
+        return self.instrument.read_bit(registeraddress, functioncode)
+
+    def write_bit(self, registeraddress, value, functioncode=5):
+        return self.instrument.write_bit(registeraddress, value, functioncode)
+
+    def read_string(self, registeraddress, number_of_registers=16,
+                    functioncode=3):
+        return self.instrument.read_string(
+            registeraddress, number_of_registers, functioncode)
+
+    def write_string(self, registeraddress, textstring,
+                     number_of_registers=16):
+        return self.instrument.write_string(
+            registeraddress, textstring, number_of_registers)
